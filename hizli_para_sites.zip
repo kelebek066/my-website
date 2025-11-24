@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hızlı Araç Sitesi</title>
+  <style>
+    body { font-family: Arial, sans-serif; background:#f5f5f5; margin:0; padding:0; }
+    header { background:#4B8DF8; padding:20px; color:#fff; text-align:center; }
+    .container { max-width:800px; margin:30px auto; background:#fff; padding:20px; border-radius:10px; }
+    input, button { padding:10px; margin:5px 0; width:100%; font-size:16px; }
+    button { background:#4B8DF8; color:#fff; border:none; cursor:pointer; }
+    button:hover { opacity:0.9; }
+    .result { margin-top:15px; font-weight:bold; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Hızlı Araç Sitesi</h1>
+    <p>Basit araçlarla ziyaretçi çek, reklam geliri kazan</p>
+  </header>
+
+  <div class="container">
+    <h2>📌 Basit Hesaplama Aracı</h2>
+    <p>İki sayıyı toplayan basit bir araç (Örnek).</p>
+    <input id="num1" type="number" placeholder="1. sayı" />
+    <input id="num2" type="number" placeholder="2. sayı" />
+    <button onclick="calculate()">Topla</button>
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    function calculate() {
+      const n1 = parseFloat(document.getElementById('num1').value) || 0;
+      const n2 = parseFloat(document.getElementById('num2').value) || 0;
+      document.getElementById('result').innerText = "Sonuç: " + (n1 + n2);
+    }
+  </script>
+</body>
+</html>
