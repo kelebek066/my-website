@@ -1,11 +1,106 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <title>Benim İlk Sitem</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hızlı Hesap</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            color: #222;
+        }
+
+        header {
+            background: #007bff;
+            color: white;
+            padding: 25px;
+            text-align: center;
+            font-size: 26px;
+            font-weight: bold;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 400px;
+            margin: 40px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 0;
+            color: #007bff;
+        }
+
+        input, button {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        button {
+            background: #007bff;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+            border: none;
+        }
+
+        button:hover {
+            background: #005fc9;
+        }
+
+        .result {
+            margin-top: 15px;
+            padding: 12px;
+            background: #e9f5ff;
+            border-left: 4px solid #007bff;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+
+    <script>
+        function hesapla() {
+            let sayi1 = parseFloat(document.getElementById("sayi1").value);
+            let sayi2 = parseFloat(document.getElementById("sayi2").value);
+
+            if (isNaN(sayi1) || isNaN(sayi2)) {
+                document.getElementById("sonuc").innerHTML = "Lütfen iki sayı giriniz!";
+                return;
+            }
+
+            let toplam = sayi1 + sayi2;
+            document.getElementById("sonuc").innerHTML = "Sonuç: " + toplam;
+        }
+    </script>
 </head>
+
 <body>
-  <h1>Site Çalışıyor!</h1>
-  <p>GitHub Pages ile başarılı bir şekilde yayınlandı.</p>
+
+<header>Hızlı Hesap</header>
+
+<div class="container">
+    <h2>Toplama İşlemi</h2>
+
+    <input type="number" id="sayi1" placeholder="1. Sayı">
+    <input type="number" id="sayi2" placeholder="2. Sayı">
+
+    <button onclick="hesapla()">Hesapla</button>
+
+    <div class="result" id="sonuc">Sonuç burada görünecek</div>
+</div>
+
 </body>
 </html>
